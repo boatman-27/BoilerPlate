@@ -92,14 +92,6 @@ router.put("/reset-password", async (req, res) => {
         hashedPassword,
         userid,
       ]);
-      const updatedUserResult = await pool.query(
-        "SELECT * FROM users WHERE userid = ($1)",
-        [userid]
-      );
-      res.status(200).json({
-        message: "Password reset successful!",
-        user: updatedUserResult.rows[0],
-      });
     } else {
       res.status(400).json({ message: "User ID does not exist" });
     }
