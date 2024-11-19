@@ -58,7 +58,19 @@ export async function checkStatus() {
       },
       credentials: "include",
     });
+
+    if (res.status === 401) {
+      // Handle the case when the user is not authenticated
+      return {
+        loggedIn: false,
+        user: null,
+        message: "User is not authenticated",
+      };
+    }
+
     const data = await res.json();
+    console.log("data:", data);
+
     if (data.user) {
       return {
         loggedIn: true,
@@ -68,6 +80,7 @@ export async function checkStatus() {
       return {
         loggedIn: false,
         user: null,
+        message: "No user data returned",
       };
     }
   } catch (error) {

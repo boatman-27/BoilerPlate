@@ -5,7 +5,7 @@ const UserContext = createContext();
 const initialState = {
   user: null,
   accountStatus: false,
-  loading: true,
+  loading: false,
 };
 
 function reducer(state, action) {
