@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import DarkModeToggle from "../../../commonUI/DarkModeToggle";
 
 function RegisterForm({
   handleSubmit,
@@ -16,6 +17,7 @@ function RegisterForm({
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             Register your account
           </h3>
+          <DarkModeToggle />
         </div>
         <form
           className="space-y-4 md:space-y-6"
@@ -142,7 +144,7 @@ function RegisterForm({
           <p className="text-center text-sm font-light text-gray-500 dark:text-gray-400">
             Already have an account?{" "}
             <NavLink
-              to="/auth/login"
+              to="/account/login"
               className="dark:text-primary-500 font-medium text-white underline hover:underline"
             >
               log in

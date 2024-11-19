@@ -1,3 +1,5 @@
+import DarkModeToggle from "../../../commonUI/DarkModeToggle";
+
 function ResetPassworForm({
   register,
   handleSubmit,
@@ -13,6 +15,7 @@ function ResetPassworForm({
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             Reset Password
           </h3>
+          <DarkModeToggle />
         </div>
         <form
           className="space-y-4 md:space-y-6"

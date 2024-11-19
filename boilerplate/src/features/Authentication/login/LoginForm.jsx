@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import DarkModeToggle from "../../../commonUI/DarkModeToggle";
 
 function LoginForm({
   handleSubmit,
@@ -15,6 +16,7 @@ function LoginForm({
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             Sign into your account
           </h3>
+          <DarkModeToggle />
         </div>
         <form
           className="space-y-4 md:space-y-6"
@@ -77,19 +79,19 @@ function LoginForm({
             {isLoading ? "Signing in..." : "Sign in"}
           </button>
           <div className="mt-2 flex items-center justify-between">
-            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+            <p className="text-sm font-light dark:text-white text-gray-900">
               Don’t have an account yet?{" "}
               <NavLink
-                to="/auth/register"
-                className="dark:text-primary-500 font-medium text-white underline hover:underline"
+                to="/account/register"
+                className="font-medium underline hover:underline"
               >
                 Sign up
               </NavLink>
             </p>
-            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+            <p className="text-sm font-light">
               <NavLink
-                to="/auth/reset-password"
-                className="dark:text-primary-500 font-medium text-white underline hover:underline"
+                to="/account/reset-password"
+                className="dark:text-white font-medium text-gray-900 underline hover:underline"
               >
                 Forgot password?
               </NavLink>
